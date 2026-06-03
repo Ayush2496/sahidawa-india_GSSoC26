@@ -208,6 +208,35 @@ export async function fetchVerifiedPharmaciesInBounds(
     }
 }
 
+export type ApiAshaWorker = {
+    id: number;
+    name: string;
+    district: string;
+    lat: number;
+    lng: number;
+    contact: string;
+    distance_km: number;
+};
+
+export async function fetchNearbyAshaWorkers(
+    lat: number,
+    lng: number,
+    radiusKm: number = 10,
+    signal?: AbortSignal
+): Promise<ApiAshaWorker[]> {
+    try {
+        const res = await fetchWithRetry(
+            `${API_BASE}/api/map/nearby?lat=${lat}&lng=${lng}&radius_km=${radiusKm}`,
+            { timeout: 8000, signal }
+        );
+        if (!res.ok) return [];
+        const body = await res.json();
+        return body.asha_workers ?? [];
+    } catch {
+        return [];
+    }
+}
+
 export async function verifyMedicine(
     batchNumber: string,
     signal?: AbortSignal
