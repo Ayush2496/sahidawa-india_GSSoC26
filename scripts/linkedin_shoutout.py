@@ -388,7 +388,8 @@ def send_to_make_webhook(post_text: str, pr: dict) -> None:
     banner_text = f"Huge thanks to {pr['author']} for their contribution to SahiDawa! 🚀"
     image_url = f"https://og-image.vercel.app/{banner_text}.png?theme=dark&md=1&fontSize=75px"
     if pr.get("author_avatar"):
-        image_url += f"&images={pr['author_avatar']}"
+        clean_avatar = pr['author_avatar'].split('?')[0]
+        image_url += f"&images={clean_avatar}"
 
     payload = {
         "post_text": post_text,
