@@ -19,15 +19,42 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            function getLinkedIssues(body) {
+            async function getLinkedIssues(prNumber, prBody) {
               const linkedIssues = new Set();
-              if (!body) return linkedIssues;
               
-              const issueRegex = /(?:close|closes|closed|fix|fixes|fixed|resolve|resolves|resolved)\s+#(\d+)/gi;
-              let match;
-              while ((match = issueRegex.exec(body)) !== null) {
-                linkedIssues.add(parseInt(match[1]));
+              try {
+                const query = `
+                  query($owner: String!, $repo: String!, $prNumber: Int!) {
+                    repository(owner: $owner, name: $repo) {
+                      pullRequest(number: $prNumber) {
+                        closingIssuesReferences(first: 10) {
+                          nodes {
+                            number
+                          }
+                        }
+                      }
+                    }
+                  }
+                `;
+                const result = await github.graphql(query, {
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  prNumber: prNumber
+                });
+                const nodes = result.repository.pullRequest.closingIssuesReferences.nodes;
+                nodes.forEach(n => linkedIssues.add(n.number));
+              } catch (e) {
+                console.error(`GraphQL error getting linked issues for PR #${prNumber}:`, e);
               }
+
+              if (prBody) {
+                const issueRegex = /(?:close|closes|closed|fix|fixes|fixed|resolve|resolves|resolved|issue|related to)\s+#(\d+)/gi;
+                let match;
+                while ((match = issueRegex.exec(prBody)) !== null) {
+                  linkedIssues.add(parseInt(match[1]));
+                }
+              }
+              
               return linkedIssues;
             }
 
@@ -52,8 +79,8 @@ jobs:
 
             if (eventName === 'pull_request') {
               const pr = context.payload.pull_request;
-              const linkedIssues = getLinkedIssues(pr.body);
-              console.log(`PR #${pr.number} body parsed. Linked issues: ${Array.from(linkedIssues).join(', ')}`);
+              const linkedIssues = await getLinkedIssues(pr.number, pr.body);
+              console.log(`PR #${pr.number} parsed. Linked issues: ${Array.from(linkedIssues).join(', ')}`);
 
               if (action === 'opened' || action === 'edited') {
                 const prLabels = (pr.labels || []).map(l => l.name);
@@ -139,7 +166,7 @@ jobs:
 
                 for (const pr of prs) {
                   try {
-                    const linkedIssues = getLinkedIssues(pr.body);
+                    const linkedIssues = await getLinkedIssues(pr.number, pr.body);
                     if (linkedIssues.has(issue.number)) {
                       console.log(`PR #${pr.number} is linked to Issue #${issue.number}. Checking label sync.`);
                       const prLabels = (pr.labels || []).map(l => l.name);
