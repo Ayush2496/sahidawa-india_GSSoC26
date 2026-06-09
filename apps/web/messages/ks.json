@@ -43,7 +43,6 @@
         "alerts": "اِطلاع",
         "pharmacy_map": "میڈیکل سٹور نَقشہِ",
         "my_reports": "مؠانؠ رِپورٹ",
-        "schedule": "Schedule",
         "home": "ہوم",
         "scans": "سکین",
         "map": "نَقشہِ",
@@ -643,7 +642,6 @@
         "nav_compare": "Compare Medicines",
         "nav_vaccine": "Vaccine Hub",
         "nav_reports": "My Reports",
-        "nav_schedule": "Medicine Schedule",
         "nav_profile": "My Profile"
     },
     "medicineSafety": {

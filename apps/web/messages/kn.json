@@ -37,7 +37,6 @@
         "alerts": "ಎಚ್ಚರಿಕೆಗಳು",
         "pharmacy_map": "ಔಷಧಾಲಯ ನಕ್ಷೆ",
         "my_reports": "ನನ್ನ ವರದಿಗಳು",
-        "schedule": "Schedule",
         "home": "ಮುಖಪುಟ",
         "scans": "ಸ್ಕ್ಯಾನ್‌ಗಳು",
         "map": "ನಕ್ಷೆ",
@@ -637,7 +636,6 @@
         "nav_compare": "Compare Medicines",
         "nav_vaccine": "Vaccine Hub",
         "nav_reports": "My Reports",
-        "nav_schedule": "Medicine Schedule",
         "nav_profile": "My Profile"
     },
     "medicineSafety": {

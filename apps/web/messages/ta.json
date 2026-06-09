@@ -37,7 +37,6 @@
         "alerts": "எச்சரிக்கைகள்",
         "pharmacy_map": "மருந்தகம் வரைபடம்",
         "my_reports": "என் அறிக்கைகள்",
-        "schedule": "Schedule",
         "home": "முகப்பு",
         "scans": "ஸ்கான்கள்",
         "map": "வரைபடம்",
@@ -637,7 +636,6 @@
         "nav_compare": "Compare Medicines",
         "nav_vaccine": "Vaccine Hub",
         "nav_reports": "My Reports",
-        "nav_schedule": "Medicine Schedule",
         "nav_profile": "My Profile"
     },
     "medicineSafety": {

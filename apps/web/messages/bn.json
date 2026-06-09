@@ -37,7 +37,6 @@
         "alerts": "সতর্কতা",
         "pharmacy_map": "ফার্মেসি ম্যাপ",
         "my_reports": "আমার রিপোর্ট",
-        "schedule": "Schedule",
         "home": "হোম",
         "scans": "স্ক্যান",
         "map": "মানচিত্র",
@@ -637,7 +636,6 @@
         "nav_compare": "Compare Medicines",
         "nav_vaccine": "Vaccine Hub",
         "nav_reports": "My Reports",
-        "nav_schedule": "Medicine Schedule",
         "nav_profile": "My Profile"
     },
     "medicineSafety": {

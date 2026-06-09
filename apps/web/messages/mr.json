@@ -37,7 +37,6 @@
         "alerts": "सूचना",
         "pharmacy_map": "औषधालय नकाशा",
         "my_reports": "माझे अहवाल",
-        "schedule": "Schedule",
         "home": "मुख्यपृष्ठ",
         "scans": "स्कॅन",
         "map": "नकाशा",
@@ -637,7 +636,6 @@
         "nav_compare": "Compare Medicines",
         "nav_vaccine": "Vaccine Hub",
         "nav_reports": "My Reports",
-        "nav_schedule": "Medicine Schedule",
         "nav_profile": "My Profile"
     },
     "medicineSafety": {

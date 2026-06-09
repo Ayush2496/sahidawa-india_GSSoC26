@@ -37,7 +37,6 @@
         "alerts": "ਚੇਤਾਵਨੀਆਂ",
         "pharmacy_map": "ਫਾਰਮੇਸੀ ਨਕਸ਼ਾ",
         "my_reports": "ਮੇਰੀਆਂ ਰਿਪੋਰਟਾਂ",
-        "schedule": "Schedule",
         "home": "ਹੋਮ",
         "scans": "ਸਕੈਨ",
         "map": "ਨਕਸ਼ਾ",
@@ -637,7 +636,6 @@
         "nav_compare": "Compare Medicines",
         "nav_vaccine": "Vaccine Hub",
         "nav_reports": "My Reports",
-        "nav_schedule": "Medicine Schedule",
         "nav_profile": "My Profile"
     },
     "medicineSafety": {

@@ -37,7 +37,6 @@
         "alerts": "સૂચનાઓ",
         "pharmacy_map": "ફાર્મસી નકશો",
         "my_reports": "મારા રિપોર્ટ",
-        "schedule": "Schedule",
         "home": "હોમ",
         "scans": "સ્કૅન",
         "map": "નકશો",
@@ -638,7 +637,6 @@
         "nav_compare": "Compare Medicines",
         "nav_vaccine": "Vaccine Hub",
         "nav_reports": "My Reports",
-        "nav_schedule": "Medicine Schedule",
         "nav_profile": "My Profile"
     },
     "medicineSafety": {

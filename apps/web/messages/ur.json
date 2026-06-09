@@ -37,7 +37,6 @@
         "alerts": "الرٹس",
         "pharmacy_map": "فارمیسی کا نقشہ",
         "my_reports": "میری رپورٹس",
-        "schedule": "Schedule",
         "home": "ہوم",
         "scans": "اسکینز",
         "map": "نقشہ",
@@ -637,7 +636,6 @@
         "nav_compare": "Compare Medicines",
         "nav_vaccine": "Vaccine Hub",
         "nav_reports": "My Reports",
-        "nav_schedule": "Medicine Schedule",
         "nav_profile": "My Profile"
     },
     "medicineSafety": {

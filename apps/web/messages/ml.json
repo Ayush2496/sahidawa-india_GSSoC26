@@ -43,7 +43,6 @@
         "alerts": "അലേർട്ടുകൾ",
         "pharmacy_map": "ഫാർമസി മാപ്പ്",
         "my_reports": "എന്റെ റിപ്പോർട്ടുകൾ",
-        "schedule": "Schedule",
         "home": "ഹോം",
         "scans": "സ്കാനുകൾ",
         "map": "മാപ്പ്",
@@ -643,7 +642,6 @@
         "nav_compare": "Compare Medicines",
         "nav_vaccine": "Vaccine Hub",
         "nav_reports": "My Reports",
-        "nav_schedule": "Medicine Schedule",
         "nav_profile": "My Profile"
     },
     "medicineSafety": {
